@@ -83,9 +83,9 @@ ctx = Context()
 ctx.lists["self.modifier"] = {
     "alt": "alt",
     "command": "cmd",
-    "control": "ctrl",  #'troll':   'ctrl',
+    "control": "ctrl",  # 'troll':   'ctrl',
     "option": "alt",
-    "shift": "shift",  #'sky':     'shift',
+    "shift": "shift",  # 'sky':     'shift',
     "super": "super",
 }
 alphabet = dict(zip(default_alphabet, letters_string))
@@ -106,6 +106,7 @@ ctx.lists["self.symbol"] = {
     "R square": "]",
     "right square": "]",
     "forward slash": "/",
+    "/": "/",
     "slash": "/",
     "backslash": "\\",
     "minus": "-",
@@ -147,6 +148,7 @@ ctx.lists["self.symbol"] = {
     "percent sign": "%",
     "caret": "^",
     "at sign": "@",
+    "@": "@",
     "and sign": "&",
     "ampersand": "&",
     "amper": "&",
@@ -179,7 +181,7 @@ simple_keys = [
 alternate_keys = {
     "delete": "backspace",
     "forward delete": "delete",
-    #'junk': 'backspace',
+    'junk': 'delete',
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
@@ -256,4 +258,3 @@ class Actions:
     def get_alphabet() -> dict:
         """Provides the alphabet dictionary"""
         return alphabet
-
