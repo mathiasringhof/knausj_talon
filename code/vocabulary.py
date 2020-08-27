@@ -2,6 +2,7 @@ from talon import Context, Module, actions, grammar
 
 
 simple_vocabulary = [
+    "map",
     "nmap",
     "admin",
     "Cisco",
@@ -9,6 +10,9 @@ simple_vocabulary = [
     "VPN",
     "DNS",
     "minecraft",
+    "docker",
+    "python",
+    "rust",
 ]
 
 mapping_vocabulary = {

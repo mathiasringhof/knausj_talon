@@ -195,5 +195,22 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
-  
-  
+
+#Extension: Jumpy
+jump word: user.vscode("Jumpy Word Mode")
+
+#Additional Line Commands
+line clone: user.vscode("editor.action.copyLinesDownAction")
+line copy up: user.vscode("editor.action.copyLinesUpAction")
+line copy down: user.vscode("editor.action.copyLinesDownAction")
+line delete: user.vscode("editor.action.deleteLines")
+line <number>: edit.jump_line(number)
+
+#Extension: Quick and Simple Text Selection
+select quote: key(ctrl-k ')
+select dubquote: key(ctrl-k ")
+select paren: key(ctrl-k ()
+select square: key(ctrl-k [)
+select brace: key(ctrl-k {)
+select tag: key(ctrl-k <)
+change quotes: key(ctrl-k :)
