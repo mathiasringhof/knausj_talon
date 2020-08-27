@@ -1,6 +1,7 @@
 slap:
 	edit.line_end()
 	key(enter)
+return: key(enter)
 #(jay son | jason ): "json"
 #(http | htp): "http"
 #tls: "tls"
