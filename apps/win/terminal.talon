@@ -1,4 +1,3 @@
-app: windows_terminal
 app: windows_command_processor
 -
 tag(): terminal
