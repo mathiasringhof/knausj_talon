@@ -5,6 +5,7 @@ and code.language: rust
 tag(): user.code_operators
 tag(): user.code_comment
 tag(): user.code_generic
+#tag(): user.code_block_comment
 settings():
     user.code_private_function_formatter = "SNAKE_CASE"
     user.code_protected_function_formatter = "SNAKE_CASE"
@@ -12,13 +13,11 @@ settings():
     user.code_private_variable_formatter = "SNAKE_CASE"
     user.code_protected_variable_formatter = "SNAKE_CASE"
     user.code_public_variable_formatter = "SNAKE_CASE"
-action(user.code_operator_indirection): ""
 action(user.code_operator_address_of): "&"
-action(user.code_operator_structure_dereference): ""
+action(user.code_operator_structure_dereference): "*"
 action(user.code_operator_lambda):
     insert("|| ")
-    key(left)
-    key(left)
+    key(left:2)
 action(user.code_operator_subscript):
     insert("[]")
     key(left)
@@ -40,8 +39,8 @@ action(user.code_operator_greater_than): " > "
 action(user.code_operator_greater_than_or_equal_to): " >= "
 action(user.code_operator_less_than): " < "
 action(user.code_operator_less_than_or_equal_to): " <= "
-action(user.code_operator_and): " and "
-action(user.code_operator_or): " or "
+action(user.code_operator_and): " && "
+action(user.code_operator_or): " || "
 action(user.code_operator_bitwise_and): " & "
 action(user.code_operator_bitwise_and_assignment): " &= "
 action(user.code_operator_bitwise_or): " | "
@@ -53,16 +52,13 @@ action(user.code_operator_bitwise_left_shift_assignment): " <<= "
 action(user.code_operator_bitwise_right_shift): " >> "
 action(user.code_operator_bitwise_right_shift_assignment): " >>= "
 action(user.code_self): "self"
-#action(user.code_null): "None"
-#action(user.code_is_null): " is None"
-#action(user.code_is_not_null): " is not None"
-action(user.code_state_if): "if "
-action(user.code_state_else_if): "else if "
-action(user.code_state_else): "else "
+action(user.code_state_if):
+    insert("if ")
+action(user.code_state_else_if):
+    insert("else if ")
+action(user.code_state_else):
+    insert("else ")
 action(user.code_state_switch): "match "
-# action(user.code_state_case):
-#     insert("case \nbreak;")
-#     edit.up()
 action(user.code_state_for):
     user.code_state_for_each()
 action(user.code_state_for_each):
@@ -74,16 +70,17 @@ action(user.code_state_for_each):
 action(user.code_state_while):
     insert("while ")
     edit.left()
-action(user.code_type_class): "impl "
 action(user.code_type_struct): "struct "
 action(user.code_import): "use "
-# action(user.code_from_import):
-#     insert("from import ")
-#     key(left)
-#     edit.word_left()
-#     key(space)
-#     edit.left()
-action(user.code_comment): "#"
+action(user.code_comment): "//"
+action(user.code_block_comment):
+    insert("/*")
+    key(enter)
+    key(enter)
+    insert("*/")
+    edit.up()
+action(user.code_block_comment_prefix): "/*"
+action(user.code_block_comment_suffix): "*/"
 action(user.code_private_function):
     insert("fn ")
 action(user.code_protected_function):
@@ -94,6 +91,29 @@ action(user.code_state_return):
 	insert("return ")
 
 #rust-specicic grammars
-state print:
-    insert("println!()")
+state format:
+    insert("format!();")
     key(left)
+    key(left)
+state print:
+    insert("print!();")
+    key(left)
+    key(left)
+state print line:
+    insert("println!();")
+    key(left)
+    key(left)
+state print error:
+    insert("eprint!();")
+    key(left)
+    key(left)
+state print error line:
+    insert("eprintln!();")
+    key(left)
+    key(left)
+state attribute:
+    insert("#[]")
+    key(left)
+state implementation: "impl "
+
+op path: "::"
