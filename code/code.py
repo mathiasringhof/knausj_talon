@@ -46,6 +46,7 @@ extension_lang_map = {
     "ps1": "powershell",
     "py": "python",
     "rb": "ruby",
+    "rs": "rust",
     "s": "assembly",
     "sh": "bash",
     "snippets": "snippets",
