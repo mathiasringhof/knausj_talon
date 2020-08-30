@@ -14,6 +14,8 @@ action(app.tab_next):
     key(ctrl-tab)
 
 cancel: key(ctrl-c)
+directory create: "mkdir "
+directory create <user.text>: "mkdir {text}"
 directory current: "pwd\n"
 directory print: "pwd\n"
 directory parent: "cd ..\n"
@@ -22,6 +24,8 @@ directory change <user.text>: "cd {text}"
 directory list: "ls\n"
 directory detail: "ls -al\n"
 directory talon: "cd /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
+directory remove: "rm "
+directory wipe: "rm -rf "
 
 file edit: "code "
 file edit <user.text>: "code {text}"
