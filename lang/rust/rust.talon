@@ -91,29 +91,30 @@ action(user.code_state_return):
 	insert("return ")
 
 #rust-specicic grammars
-state format:
-    insert("format!();")
-    key(left)
-    key(left)
-state print:
-    insert("print!();")
-    key(left)
-    key(left)
-state print line:
-    insert("println!();")
-    key(left)
-    key(left)
-state print error:
-    insert("eprint!();")
-    key(left)
-    key(left)
-state print error line:
-    insert("eprintln!();")
-    key(left)
-    key(left)
 state attribute:
-    insert("#[]")
-    key(left)
-state implementation: "impl "
+        insert("#[]")
+        key(left)
 
+
+state implementation: "impl "
 op path: "::"
+
+
+#.py file implementation
+call <user.rust_functions>:
+    insert("{rust_functions}();")
+    key(left:2)
+
+let <phrase>:
+    insert("let ")
+    insert(user.formatted_text(phrase, "SNAKE_CASE"))
+let <user.rust_types> <phrase>:
+    insert("let ")
+    insert(user.formatted_text(phrase, "SNAKE_CASE"))
+    insert(": {rust_types}")
+let mutable <user.rust_types> <phrase>:
+        insert("let mut ")
+        insert(user.formatted_text(phrase, "SNAKE_CASE"))
+        insert(": {rust_types}")
+
+<user.rust_types>: "{rust_types}"
