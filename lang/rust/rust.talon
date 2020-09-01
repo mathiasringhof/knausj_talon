@@ -108,13 +108,8 @@ call <user.rust_functions>:
 let <phrase>:
     insert("let ")
     insert(user.formatted_text(phrase, "SNAKE_CASE"))
-let <user.rust_types> <phrase>:
-    insert("let ")
+let mute <phrase>:
+    insert("let mut ")
     insert(user.formatted_text(phrase, "SNAKE_CASE"))
-    insert(": {rust_types}")
-let mutable <user.rust_types> <phrase>:
-        insert("let mut ")
-        insert(user.formatted_text(phrase, "SNAKE_CASE"))
-        insert(": {rust_types}")
 
-<user.rust_types>: "{rust_types}"
+type <user.rust_types>: ": {rust_types}"
