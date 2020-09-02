@@ -95,14 +95,16 @@ state attribute:
         insert("#[]")
         key(left)
 
-
+state extern: "extern crate "
 state implementation: "impl "
 op path: "::"
+op placeholder: "{}"
 
 
 #.py file implementation
 call <user.rust_functions>:
     insert("{rust_functions}();")
+    sleep(100ms)
     key(left:2)
 
 let <phrase>:
@@ -112,4 +114,7 @@ let mute <phrase>:
     insert("let mut ")
     insert(user.formatted_text(phrase, "SNAKE_CASE"))
 
-type <user.rust_types>: ": {rust_types}"
+type <user.rust_types>: "{rust_types}"
+off type <user.rust_types>: ": {rust_types}"
+
+use <user.rust_libraries>: "use {rust_libraries}"

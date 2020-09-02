@@ -32,6 +32,7 @@ ctx.lists["self.rust_types"] = {
     "num": "enum",
     "float": "f32",
     "f thirty two": "f32",
+    "slice": "&str"
 }
 
 
@@ -43,8 +44,15 @@ ctx.lists["self.rust_functions"] = {
     "print line error": "eprintln!",
 }
 
+ctx.lists["self.rust_libraries"] = {
+    "standard file system": "std::fs::",
+    "standard i/o": "std::io::",
+    "standard path": "std::path::",
+}
+
 mod.list("rust_types", desc="Common Rust types")
 mod.list("rust_functions", desc="Standard Rust functions")
+mod.list("rust_libraries", desc="Common Rust libraries")
 
 
 @mod.capture
@@ -63,7 +71,7 @@ def rust_functions(m) -> str:
 
 
 @mod.capture
-def function(m) -> str:
+def rust_libraries(m) -> str:
     "Returns a string"
 
 
@@ -75,3 +83,8 @@ def rust_types(m) -> str:
 @ctx.capture(rule="{self.rust_functions}")
 def rust_functions(m) -> str:
     return m.rust_functions
+
+
+@ctx.capture(rule="{self.rust_libraries}")
+def rust_libraries(m) -> str:
+    return m.rust_libraries
