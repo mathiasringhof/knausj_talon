@@ -29,9 +29,16 @@ directory remove: "rm "
 directory wipe: "rm -rf "
 directory edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 
-file edit: "code "
-file edit <user.text>: "code {text}"
+file edit [<user.text>]:
+  insert("code ")
+  insert(text or "")
 file edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
+file remove [<user.text>]:
+  insert("rm ")
+  insert(text or "")
+file wipe [<user.text>]:
+  insert("rm -rf ")
+  insert(text or "")
 
 rerun <user.text>:
   key(ctrl-r)
