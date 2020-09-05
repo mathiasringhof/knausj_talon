@@ -99,6 +99,7 @@ state extern: "extern crate "
 state implementation: "impl "
 op path: "::"
 op placeholder: "{}"
+op debug: "{{:?}}"
 
 
 #.py file implementation

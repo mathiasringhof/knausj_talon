@@ -53,3 +53,6 @@ run docker compose: "docker-compose "
 run apt: "apt "
 run ssh: "ssh "
 run grep: "grep "
+run cargo [<user.text>]:
+  insert("cargo ")
+  insert(text or "")
