@@ -5,6 +5,7 @@ mod = Module()
 
 mod.apps.chrome = "app.name: Google Chrome"
 mod.apps.chrome = "app.name: chrome.exe"
+mod.apps.chrome = "app.name: brave.exe"
 
 ctx.matches = r"""
 app: chrome
