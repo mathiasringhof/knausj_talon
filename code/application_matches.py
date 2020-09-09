@@ -72,3 +72,7 @@ apps.windows_terminal = """
 os: windows
 and app.name: WindowsTerminal.exe 
 """
+
+apps.vim = """
+win.title:/VIM/
+"""

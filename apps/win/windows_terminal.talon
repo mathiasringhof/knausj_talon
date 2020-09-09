@@ -1,7 +1,7 @@
 # Windows Terminal with WSL2
 app: windows_terminal
 -
-tag(): user.tabs
+#tag(): user.tabs
 tag(): user.tmux
 
 action(app.tab_open):
@@ -62,9 +62,9 @@ run grep: "grep "
 run cargo [<user.text>]:
   insert("cargo ")
   insert(text or "")
-  run edit [<user.text>]:
-    insert("nvim ")
-    insert(text or "")  
+run vim [<user.text>]:
+  insert("nvim ")
+  insert(text or "")  
 
 apt install: "apt install "
 apt search: "apt search "
