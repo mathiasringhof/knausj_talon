@@ -103,7 +103,7 @@ action(edit.line_start):
 action(edit.line_end):
     user.vim_normal_mode_key("$")
 action(edit.file_end):
-    user.vim_normal_mode_key(G)
+    user.vim_normal_mode_key("G")
 action(edit.file_start):
     user.vim_normal_mode("gg")
 action(edit.page_down):

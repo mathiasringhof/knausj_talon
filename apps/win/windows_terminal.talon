@@ -1,7 +1,7 @@
 # Windows Terminal with WSL2
 app: windows_terminal
 -
-#tag(): user.tabs
+tag(): user.tabs
 tag(): user.tmux
 
 action(app.tab_open):

@@ -7,7 +7,7 @@
   insert(result)
 <user.format_text>$: insert(format_text)
 <user.format_text> over: insert(format_text)
-#word <user.word>: insert(user.word)
+single <user.word>: insert(user.word)
 format help: user.formatters_help_toggle()
 format recent: user.formatters_recent_toggle()
 format repeat <number>: 
