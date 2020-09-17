@@ -1,4 +1,5 @@
 app: apple_terminal
+app: iterm2
 -
 tag(): terminal
 tag(): user.file_manager
@@ -31,4 +32,3 @@ suspend:
 resume:
   insert("fg")
   key(enter)
-
