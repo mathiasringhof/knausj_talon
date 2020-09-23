@@ -17,12 +17,12 @@ directory detail: "ls -al\n"
 directory change talon: "cd /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 directory remove: "rm "
 directory wipe: "rm -rf "
-directory edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
+directory edit talon: "nvim /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 
 file edit [<user.text>]:
-  insert("code ")
+  insert("nvim ")
   insert(text or "")
-file edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
+file edit talon: "nvim /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 file remove [<user.text>]:
   insert("rm ")
   insert(text or "")
@@ -51,9 +51,7 @@ run grep: "grep "
 run cargo [<user.text>]:
   insert("cargo ")
   insert(text or "")
-run vim [<user.text>]:
-  insert("nvim ")
-  insert(text or "")  
+run vim: "nvim .\n"
 
 apt install: "apt install "
 apt search: "apt search "
