@@ -725,7 +725,7 @@ tab move right: user.vim_command_mode_exterm(":tabm +\n")
 tab move left: user.vim_command_mode_exterm(":tabm -\n")
 edit (buf|buffer) <number_small> [in] new tab: user.vim_command_mode_exterm(":tabnew #{number_small}\n")
 
-[new] tab terminal: user.vim_command_mode_exterm(":tabe term://bash\n")
+[new] tab terminal: user.vim_command_mode_exterm(":tabe term://zsh\n")
 
 ###
 # Settings
@@ -1022,10 +1022,10 @@ force new terminal:
 [new] (split|horizontal) (term|terminal):
     # NOTE: if your using zsh you might have to switch this, though depending
     # on your setup it will still work (this loads zsh on mine)
-    user.vim_normal_mode_exterm(":split term://bash\n")
+    user.vim_normal_mode_exterm(":split term://zsh\n")
 
 [new] vertical split (term|terminal):
-    user.vim_normal_mode_exterm(":vsplit term://bash\n")
+    user.vim_normal_mode_exterm(":vsplit term://zsh\n")
 
 ###
 # Folding

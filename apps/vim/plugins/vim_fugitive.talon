@@ -5,6 +5,7 @@ tag: user.vim
 (fugitive|git) add everything: user.vim_command_mode(":G add -u\n")
 (fugitive|git) blame: user.vim_command_mode(":G blame\n")
 (fugitive|git) browse: user.vim_command_mode(":GBrowse\n")
+(fugitive|git) command: user.vim_command_mode(":G ")
 (fugitive|git) commit: user.vim_command_mode(":G commit\n")
 (fugitive|git) (delete|remove): user.vim_command_mode(":GDelete")
 (fugitive|git) diff staged: user.vim_command_mode(":G! diff --staged\n")
