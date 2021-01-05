@@ -83,7 +83,7 @@ os: windows
 and app.name: mintty.exe 
 """
 
-
-apps.vim = """
-win.title:/VIM/
+mod.apps.windows_power_shell = """
+os: windows
+and app.name: powershell.exe
 """

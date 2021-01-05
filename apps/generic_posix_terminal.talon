@@ -18,12 +18,18 @@ directory detail: "ls -al\n"
 directory change talon: "cd /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 directory remove: "rm "
 directory wipe: "rm -rf "
-directory edit talon: "nvim /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
+directory edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 
-file edit [<user.text>]:
-  insert("nvim ")
+file show|display [<user.text>]:
+  insert("cat ")
   insert(text or "")
-file edit talon: "nvim /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
+file edit [<user.text>]:
+  insert("code ")
+  insert(text or "")
+file vim [<user.text>]:
+    insert("vi ")
+    insert(text or "")
+file edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 file remove [<user.text>]:
   insert("rm ")
   insert(text or "")
@@ -44,6 +50,7 @@ run code: "code .\n"
 run super [<user.text>]:
   insert("sudo ")
   insert(text or "")
+run switch root: "su - root\n"
 run docker: "docker "
 run docker compose: "docker-compose "
 run apt: "apt "
@@ -58,3 +65,14 @@ apt install: "apt install "
 apt search: "apt search "
 
 permissions change: "chmod "
+
+deer et: "etc"
+dear de: "dev"
+di var: "var"
+
+system control: "systemctl "
+system control enable: "systemctl enable "
+system control start: "systemctl start "
+system control stop: "systemctl stop "
+system control restart: "systemctl restart "
+system control status: "systemctl status "

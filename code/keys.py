@@ -208,6 +208,7 @@ alternate_keys = {
     "delete": "backspace",
     "forward delete": "delete",
     'junk': 'delete',
+    "pop": "tab"
 }
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
