@@ -78,6 +78,12 @@ os: windows
 and app.name: WindowsTerminal.exe 
 """
 
+apps.mintty = """
+os: windows
+and app.name: mintty.exe 
+"""
+
+
 apps.vim = """
 win.title:/VIM/
 """
