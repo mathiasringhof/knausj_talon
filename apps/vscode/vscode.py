@@ -10,6 +10,10 @@ os: mac
 and app.bundle: com.microsoft.VSCode
 """
 mod.apps.vscode = """
+os: mac
+and app.bundle: com.microsoft.VSCodeInsiders
+"""
+mod.apps.vscode = """
 os: linux
 and app.name: Code - OSS
 """
