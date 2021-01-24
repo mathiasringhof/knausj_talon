@@ -1,4 +1,5 @@
 app: windows_terminal
+app: mintty
 app: apple_terminal
 app: iterm2
 -

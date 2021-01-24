@@ -78,6 +78,11 @@ os: windows
 and app.name: WindowsTerminal.exe 
 """
 
+apps.mintty = """
+os: windows
+and app.name: mintty.exe 
+"""
+
 mod.apps.windows_power_shell = """
 os: windows
 and app.name: powershell.exe
