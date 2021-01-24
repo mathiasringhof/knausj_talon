@@ -32,6 +32,10 @@ action(edit.page_down):
   key(command-pagedown)
 action(edit.page_up):
   key(command-pageup)
+action(edit.line_start):
+  key(ctrl-a)
+action(edit.line_end):
+  key(ctrl-e)
 suspend:
   key(ctrl-z)
 resume:

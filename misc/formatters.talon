@@ -9,6 +9,7 @@
 <user.format_text>+ over: user.insert_many(format_text_list)
 <user.formatters> that: user.formatters_reformat_selection(user.formatters)
 single <user.word>: insert(user.word)
+word <user.word>: insert(user.word)
 format help: user.formatters_help_toggle()
 format recent: user.formatters_recent_toggle()
 format repeat <number>: 

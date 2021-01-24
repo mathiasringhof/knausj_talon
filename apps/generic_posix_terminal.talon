@@ -52,7 +52,6 @@ run super [<user.text>]:
 run switch root: "su - root\n"
 run docker: "docker "
 run docker compose: "docker-compose "
-run apt: "apt "
 run ssh: "ssh "
 run grep: "grep "
 run cargo [<user.text>]:
@@ -60,7 +59,11 @@ run cargo [<user.text>]:
   insert(text or "")
 run vim: "nvim .\n"
 
+run apt [<user.text>]:
+  insert("apt ")
+  insert(text or "")
 apt install: "apt install "
+apt remove: "apt remove "
 apt search: "apt search "
 
 permissions change: "chmod "
@@ -75,3 +78,9 @@ system control start: "systemctl start "
 system control stop: "systemctl stop "
 system control restart: "systemctl restart "
 system control status: "systemctl status "
+system control [<user.text>]:
+  insert("systemctl ")
+  insert(text or "")
+
+system log tale: "journalctl -xef\n"
+system log show: "journalctl -xe\n"
