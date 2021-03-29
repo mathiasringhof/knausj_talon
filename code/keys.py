@@ -112,15 +112,17 @@ def letters(m) -> str:
 
 
 ctx = Context()
-ctx.lists["self.modifier_key"] = {
+modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alt": "alt",  #'alter': 'alt',
-    "command": "cmd",
-    "control": "ctrl",  # 'troll':   'ctrl',
-    "option": "alt",
-    "shift": "shift",  # 'sky':     'shift',
+    "control": "ctrl",  #'troll':   'ctrl',
+    "shift": "shift",  #'sky':     'shift',
     "super": "super",
 }
+if app.platform  == "mac":
+    modifier_keys["command"] = "cmd"
+    modifier_keys["option"] = "alt"
+ctx.lists["self.modifier_key"] = modifier_keys
 alphabet = dict(zip(default_alphabet, letters_string))
 ctx.lists["self.letter"] = alphabet
 
@@ -231,10 +233,13 @@ alternate_keys = {
     "forward delete": "delete",
     'junk': 'delete',
     "pop": "tab"
+    "page up": "pageup",
+    "page down": "pagedown",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
     alternate_keys["menu key"] = "menu"
+    alternate_keys["print screen"] = "printscr"
 
 keys = {k: k for k in simple_keys}
 keys.update(alternate_keys)
