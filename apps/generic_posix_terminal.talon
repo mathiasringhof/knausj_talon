@@ -4,6 +4,11 @@ app: apple_terminal
 app: iterm2
 -
 cancel: key(ctrl-c)
+dub tab:
+  key(tab)
+  key(tab)
+clear last: key(ctrl-w)
+
 directory create: "mkdir "
 directory create <user.text>: "mkdir {text}"
 directory current: "pwd\n"

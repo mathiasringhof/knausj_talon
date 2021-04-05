@@ -232,7 +232,7 @@ alternate_keys = {
     "delete": "backspace",
     "forward delete": "delete",
     'junk': 'delete',
-    "pop": "tab"
+    "pop": "tab",
     "page up": "pageup",
     "page down": "pagedown",
 }
