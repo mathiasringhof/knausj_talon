@@ -9,6 +9,7 @@ mode: user.vyos
 
 ^do show|show configuration: "show\n"
 ^show interfaces: "show interfaces\n"
+^show firewall: "show firewall\n"
 
 wieland: "VLAN"
 ethernet|either not: "ethernet"
