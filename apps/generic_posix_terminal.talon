@@ -58,7 +58,9 @@ run super [<user.text>]:
 run switch root: "su - root\n"
 run docker: "docker "
 run docker compose: "docker-compose "
-run ssh: "ssh "
+run ssh [<user.text>]:
+  insert("ssh ")
+  insert(text or "")
 run grep: "grep "
 run cargo [<user.text>]:
   insert("cargo ")
