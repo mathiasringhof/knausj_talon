@@ -73,6 +73,7 @@ run apt [<user.text>]:
 apt install: "apt install "
 apt remove: "apt remove "
 apt search: "apt search "
+apt all to remove: "apt autoremove "
 
 permissions change: "chmod "
 
