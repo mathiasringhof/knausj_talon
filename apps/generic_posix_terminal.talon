@@ -20,10 +20,8 @@ directory change: "cd "
 directory change <user.text>: "cd {text}"
 directory list: "ls\n"
 directory detail: "ls -al\n"
-directory change talon: "cd /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 directory remove: "rm "
 directory wipe: "rm -rf "
-directory edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 
 file show|display [<user.text>]:
   insert("cat ")
@@ -34,7 +32,6 @@ file edit [<user.text>]:
 file vim [<user.text>]:
     insert("vi ")
     insert(text or "")
-file edit talon: "code /mnt/c/Users/mathias/AppData/Roaming/talon/user\n"
 file remove [<user.text>]:
   insert("rm ")
   insert(text or "")
