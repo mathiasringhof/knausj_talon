@@ -3,6 +3,8 @@ app: mintty
 app: apple_terminal
 app: iterm2
 -
+tag(): user.tmux
+ 
 cancel: key(ctrl-c)
 dub tab:
   key(tab)
@@ -68,15 +70,18 @@ run apt [<user.text>]:
   insert("apt ")
   insert(text or "")
 apt install: "apt install "
+apt list: "apt list "
 apt remove: "apt remove "
 apt search: "apt search "
 apt all to remove: "apt autoremove "
 
 permissions change: "chmod "
 
-deer et: "etc"
-dear de: "dev"
-di var: "var"
+zfs create: "zfs create "
+zfs list: "zfs list "
+zpool create: "zpool create "
+zpool set: "zpool set "
+
 
 system control: "systemctl "
 system control enable: "systemctl enable "

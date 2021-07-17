@@ -1,4 +1,3 @@
-os: linux
 tag: user.tmux
 -
 mux: "tmux "
@@ -14,6 +13,9 @@ mux name session:
     key($)
 mux kill session:
     insert('tmux kill-session -t ')
+mux detach:
+    key(ctrl-b)
+    key(d)
 #window management
 mux new window:
     key(ctrl-b)
